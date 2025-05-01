@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport>
+    <mat-toolbar>Source</mat-toolbar>
+    <app-source-list (sourceSelected)="onSourceSelected($event); drawer.toggle()"
+                      [sources]="sources"/>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()" aria-label="Toggle sidenav"
+              type="button">
+        <mat-icon aria-label="Sidenav toggle icon">menu</mat-icon>
+      </button>
+      <span>CatchUp</span>
+      <span class="spacer"></span>
+      <span>
+        <app-language-switcher></app-language-switcher>
+      </span>
+    </mat-toolbar>
+    <app-article-list [articles]="articles"/>
+    <app-footer-content>
+      <app-footer/>
+    </app-footer-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
