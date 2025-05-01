@@ -4,7 +4,7 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatAnchor, MatIconButton} from '@angular/material/button';
 import {TranslatePipe} from '@ngx-translate/core';
-import {MatIcon} from '@angular/material/icon';
+import {MatIconModule} from '@angular/material/icon';
 import {DatePipe} from '@angular/common';
 
 
@@ -15,7 +15,7 @@ import {DatePipe} from '@angular/common';
     MatAnchor,
     TranslatePipe,
     MatIconButton,
-    MatIcon,
+    MatIconModule,
     MatSnackBarModule,
     DatePipe
   ],
