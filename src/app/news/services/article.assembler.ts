@@ -1,0 +1,33 @@
+import {LogoApiService} from '../../shared/services/logo-api.service';
+import {ArticleResource, TopHeadlinesResponse} from './top-headlines.response';
+import {Article} from '../model/article.entity';
+
+export class ArticleAssembler {
+
+  static logoApiService: LogoApiService;
+  static withLogoApiService(logoApiService: LogoApiService) {
+    this.logoApiService = logoApiService;
+  }
+
+  static toEntityFromResource(resource: ArticleResource): Article {
+    return {
+      source: {
+        id: resource.source.id || '',
+        name: resource.source.name,
+        url: '',
+        urlToLogo: ''
+      },
+      title: resource.title,
+      author: resource.author,
+      description: resource.description || '',
+      url: resource.url,
+      urlToImage: resource.urlToImage || '',
+      publisedAt: resource.publishedAt,
+    }
+  }
+
+  static toEntitiesFromResponse(response: TopHeadlinesResponse): Article[] {
+    return response.articles.map(article => this.toEntityFromResource(article));
+  }
+
+}
