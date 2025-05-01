@@ -57,6 +57,4 @@ export class SideNavigationBarComponent implements OnInit {
       this.searchArticleForSource(this.sources[0]);
     });
   }
-
-  protected readonly events = module
 }
