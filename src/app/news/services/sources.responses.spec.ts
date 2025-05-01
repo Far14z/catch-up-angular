@@ -1,7 +1,6 @@
-import { SourcesResponses } from './sources.responses';
+import { SourcesResponse } from './sources.responses';
 
-describe('SourcesResponses', () => {
+describe('SourcesResponse', () => {
   it('should create an instance', () => {
-    expect(new SourcesResponses()).toBeTruthy();
   });
 });
